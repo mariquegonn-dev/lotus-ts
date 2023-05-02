@@ -1,0 +1,114 @@
+.stepsContent {
+  display: flex;
+  border: 1px solid var(--cor-rgba);
+  border-radius: 16px;
+}
+
+.steps {
+  display: flex;
+  padding: 12px;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  background: none;
+  display: flex;
+  padding: 7px;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.icon.active {
+  background: var(--cor-bgIcon);
+}
+
+.icon svg path {
+  fill: var(--cor-iconDisable);
+}
+
+.icon.active svg path {
+  fill: var(--cor-white);
+}
+
+.title {
+  font: 500 1rem "Barlow";
+}
+
+.stepTitle {
+  color: var(--cor-bgIcon);
+  font: 500 0.75rem "Barlow";
+}
+
+.icon:hover {
+  background: var(--cor-bgHover);
+  transition: 0.3s;
+}
+
+.icon:hover svg path {
+  fill: var(--cor-iconDisable);
+}
+
+.iconDesc {
+  display: none;
+}
+
+.iconDesc.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon::after {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: -13px;
+}
+
+.teste {
+  background: red;
+}
+
+.titleHover {
+  display: none;
+  position: absolute;
+  top: -43px;
+  background: var(--cor-iconHover);
+  border-radius: 16px;
+  padding: 6px 12px;
+  left: -15px;
+  color: white;
+}
+
+.titleHover::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--cor-iconHover);
+  position: absolute;
+  display: block;
+  bottom: -3px;
+  left: 30%;
+  transform: rotate(45deg);
+}
+
+.icon:hover .titleHover {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .stepsContent {
+    flex-wrap: wrap;
+  }
+  .iconDesc.active {
+    display: none;
+  }
+  .icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
