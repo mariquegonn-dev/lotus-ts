@@ -1,0 +1,49 @@
+.calorias {
+  padding: 40px 16px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.title {
+  font: 400 2.5rem/1 "Barlow";
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: var(--cor-blueLight);
+  position: absolute;
+  bottom: -2px;
+  left: -8px;
+  z-index: -1;
+  border-radius: 0.3rem;
+}
+
+.title::after {
+  content: ".";
+  color: var(--cor-bgIcon);
+}
+
+.content {
+  width: 720px;
+  height: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 3px 0 #6265d8;
+  padding: 20px;
+  border-radius: 0.3rem;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+}
+
+@media (max-width: 750px) {
+  .content {
+    width: initial;
+    height: initial;
+  }
+}
