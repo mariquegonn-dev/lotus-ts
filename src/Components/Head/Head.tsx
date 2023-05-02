@@ -5,12 +5,12 @@ type headType = {
   description: string;
 };
 
-const Head = (props: headType) => {
+const Head = ({ title, description }: headType) => {
   React.useEffect(() => {
-    document.title = props.title;
+    document.title = title;
     document
       .querySelector("meta[name='description']")
-      ?.setAttribute("content", props.description);
+      ?.setAttribute("content", description);
   });
 
   return <></>;
