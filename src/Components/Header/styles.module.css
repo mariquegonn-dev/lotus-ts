@@ -1,0 +1,133 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 16px;
+  border-bottom: 1px solid var(--cor-divider);
+}
+
+.logo {
+  font: 400 2rem/1 "ABeeZee";
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--cor-black);
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav li a {
+  padding: 1rem 0;
+  display: inline-block;
+  color: var(--cor-black);
+}
+
+.nav li a:hover {
+  color: var(--cor-bgIcon);
+}
+
+.mobileButton {
+  background: #eee;
+  border-radius: 0.3rem;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.mobileButton::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+  transition: 0.2s;
+}
+
+.mobileButton:hover,
+.mobileButton:focus,
+.mobileButton.active {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 3px var(--cor-blueLight);
+  border-color: var(--cor-bgIcon);
+  color: var(--cor-bgIcon);
+}
+
+.mobileButton.active::after {
+  transform: rotate(-90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0, 8px currentColor, 0 -8px currentColor;
+}
+
+@media (max-width: 550px) {
+  .header {
+    padding: 16px;
+  }
+}
+
+.navMobile {
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  padding: 0 1rem;
+  background: var(--cor-bgMenu);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navMobileActive {
+  opacity: 1;
+  transition: 0.3s;
+  transform: initial;
+  z-index: 100;
+  pointer-events: initial;
+}
+
+.navMobile li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--cor-dividerMenu);
+  padding: 0.8rem 0;
+  cursor: pointer;
+  color: var(--cor-text);
+  font-size: 18px;
+  gap: 10px;
+}
+
+.navMobile li a:hover {
+  color: var(--cor-bgIcon);
+}
+
+.menuMobile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconColor path {
+  fill: var(--cor-text);
+}
+
+@media (max-width: 640px) {
+  .DarkTheme {
+    display: none !important;
+  }
+}
