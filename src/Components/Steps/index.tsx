@@ -7,9 +7,10 @@ import AtividadeFisica from "../../assets/Steps/AtividadeFisica";
 import Objetivo from "../../assets/Steps/Objetivo";
 import Resultado from "../../assets/Steps/Resultado";
 import { useSelector } from "react-redux";
+import { useSteps } from "../../redux/sliceSteps";
 
 const index = () => {
-  const { step } = useSelector((rootReducer) => rootReducer.userReducer);
+  const { step } = useSelector(useSteps);
 
   const steps = [
     {
