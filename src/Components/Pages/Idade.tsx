@@ -19,7 +19,7 @@ const Idade = () => {
           label="Qual a sua idade?"
           desc="Especifique a sua idade."
           value={idade === "" ? "" : idade}
-          placeholder={idade !== "" ? "" : 22}
+          placeholder={idade !== "" ? "" : "22"}
           onChange={({ target }) => dispatch(addIdade(target.value))}
           auxiliar="anos"
         />

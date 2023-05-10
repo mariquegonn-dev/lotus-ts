@@ -1,17 +1,12 @@
 import styles from "./Pages.module.css";
 import Button from "../Button";
 import Input from "../Input/InputDigit";
-import AlturaImg from "../../assets/png/altura.png";
+import PesoImg from "../../assets/png/peso.png";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addAltura,
-  addError,
-  addSteps,
-  useSteps,
-} from "../../redux/sliceSteps";
+import { addError, addPeso, addSteps, useSteps } from "../../redux/sliceSteps";
 
-const Altura = () => {
-  const { step, altura, error } = useSelector(useSteps);
+const Peso = () => {
+  const { step, peso, error } = useSelector(useSteps);
   const dispatch = useDispatch();
 
   return (
@@ -19,19 +14,17 @@ const Altura = () => {
       <form className={styles.form}>
         <Input
           type="number"
-          name="altura"
-          label="Qual a sua altura?"
-          desc="Especifique a sua altura em centímetros (cm)"
-          value={altura === "" ? "" : altura}
-          placeholder={altura !== "" ? "" : "175"}
-          onChange={({ target }) => {
-            dispatch(addAltura(target.value));
-          }}
-          auxiliar="cm"
+          name="peso"
+          label="Qual o seu peso?"
+          desc="Especifique o seu peso em quilogramas (kg)"
+          value={peso === "" ? "" : peso}
+          placeholder={peso !== "" ? "" : "70"}
+          onChange={({ target }) => dispatch(addPeso(target.value))}
+          auxiliar="kg"
         />
 
-        {error && altura === "" && (
-          <p className="error">Insira a sua altura antes de avançar.</p>
+        {error && peso === "" && (
+          <p className="error">Insira o seu peso antes de avançar.</p>
         )}
 
         <div className={styles.buttons}>
@@ -48,7 +41,7 @@ const Altura = () => {
             text="PRÓX"
             onClick={(e) => {
               e.preventDefault();
-              if (altura !== "") {
+              if (peso !== "") {
                 if (step !== 7) {
                   dispatch(addSteps(step + 1));
                   dispatch(addError(false));
@@ -59,9 +52,9 @@ const Altura = () => {
         </div>
       </form>
 
-      <img className="imgPerfil" src={AlturaImg} alt="" />
+      <img className="imgPerfil" src={PesoImg} alt="" />
     </div>
   );
 };
 
-export default Altura;
+export default Peso;
