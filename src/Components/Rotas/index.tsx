@@ -9,6 +9,7 @@ import Altura from "../Pages/Altura";
 import Peso from "../Pages/Peso";
 import AtividadeFisica from "../Pages/AtividadeFisica";
 import Objetivo from "../Pages/Objetivo";
+import Resultado from "../Pages/Resultado";
 
 const index = () => {
   const { step } = useSelector(useSteps);
@@ -27,6 +28,8 @@ const index = () => {
         return <AtividadeFisica />;
       case 5:
         return <Objetivo />;
+      case 6:
+        return <Resultado />;
       default:
         return <Sexo />;
     }
