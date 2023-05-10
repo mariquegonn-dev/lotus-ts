@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Components/Home";
 import CaloriasDiarias from "./Components/Rotas";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="caloriasDiarias" element={<CaloriasDiarias />} />
           </Routes>
+          <Footer />
         </Provider>
       </BrowserRouter>
     </section>
