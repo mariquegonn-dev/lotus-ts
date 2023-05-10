@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useSteps } from "../../redux/sliceSteps";
 import Sexo from "../Pages/Sexo";
 import Idade from "../Pages/Idade";
+import Altura from "../Pages/Altura";
 
 const index = () => {
   const { step } = useSelector(useSteps);
@@ -15,6 +16,8 @@ const index = () => {
         return <Sexo />;
       case 1:
         return <Idade />;
+      case 2:
+        return <Altura />;
       default:
         return <Sexo />;
     }

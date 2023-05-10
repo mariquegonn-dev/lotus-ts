@@ -8,7 +8,7 @@ type inputDigitType = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   auxiliar?: string;
-  placeholder?: string | 22;
+  placeholder?: string | number;
 };
 
 const index = ({
