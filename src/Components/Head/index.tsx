@@ -5,7 +5,7 @@ type headType = {
   description: string;
 };
 
-const Head = ({ title, description }: headType) => {
+const index = ({ title, description }: headType) => {
   React.useEffect(() => {
     document.title = title;
     document
@@ -16,4 +16,4 @@ const Head = ({ title, description }: headType) => {
   return <></>;
 };
 
-export default Head;
+export default index;

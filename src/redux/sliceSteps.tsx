@@ -3,23 +3,23 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface StepsType {
   step: number;
   error: boolean;
-  sexo: string | null;
+  sexo: string | undefined;
   idade: string;
   altura: string;
   peso: string;
-  atividadeFisica: string | null;
-  objetivo: string | null;
+  atividadeFisica: string | undefined;
+  objetivo: string | undefined;
 }
 
 const INITIAL_STATE: StepsType = {
   step: 0,
   error: false,
-  sexo: null,
+  sexo: undefined,
   idade: "",
   altura: "",
   peso: "",
-  atividadeFisica: null,
-  objetivo: null,
+  atividadeFisica: undefined,
+  objetivo: undefined,
 };
 
 const sliceSteps = createSlice({
@@ -54,7 +54,16 @@ const sliceSteps = createSlice({
 });
 
 export default sliceSteps.reducer;
-export const { addSteps } = sliceSteps.actions;
+export const {
+  addSteps,
+  addError,
+  addAltura,
+  addAtividadeFisica,
+  addIdade,
+  addObjetivo,
+  addPeso,
+  addSexo,
+} = sliceSteps.actions;
 
 export const useSteps = (state: any) => {
   return state.steps as StepsType;
